@@ -8,11 +8,10 @@ export function withRouter(Component) {
     return (
       <Component
         {...props}
-        location={location}
-        params={params}
-        navigate={navigate}
+        router={{ location, navigate, params }}
       />
     );
   }
-  return ComponentWithRouterProp
+
+  return ComponentWithRouterProp;
 }

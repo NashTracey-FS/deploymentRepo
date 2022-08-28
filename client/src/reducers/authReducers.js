@@ -3,11 +3,15 @@ import {
     USER_LOADING
   } from "../actions/types";
   const isEmpty = require("is-empty");
-  const initialState = {
-    isAuthenticated: false,
-    user: {},
-    loading: false
-  };
+  const user =JSON.parse(localStorage.getItem("user"))
+  const initialState = user
+  ? {isLoggedIn: true,
+      isAuthenticated:true,
+      user}
+  : {isLoggedIn: false,
+      isAuthenticated: false,
+      user: null}
+
   export default function(state = initialState, action) {
     switch (action.type) {
       case SET_CURRENT_USER:

@@ -1,53 +1,65 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import classnames from "classnames";
+
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.onChangeEmail = this.onChangeEmail.bind(this);
+    this.onChangePassword = this.onChangePassword.bind(this);
     this.state = {
       email: "",
       password: "",
-      errors: {}
+      loading: false,
     };
   }
+  
 
-  componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
+  onChangeEmail(e) {
+    this.setState({
+      email: e.target.value,
+    });
+  }
+  onChangePassword(e) {
+    this.setState({
+      password: e.target.value,
+    });
   }
 
-  componentDidUpdate(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard");
-    }
-if (nextProps.errors) {
+  handleLogin(e) {
+    e.preventDefault();
+    this.setState({
+      loading: true,
+    });
+    const { dispatch, history } = this.props;
+    if (this.state.email && this.state.password != null) {
+      dispatch(loginUser(this.state.email, this.state.password))
+        .then(() => {
+          history.push("/dashboard");
+          window.location.reload();
+        })
+        .catch(() => {
+          this.setState({
+            loading: false
+          });
+        });
+    } else {
       this.setState({
-        errors: nextProps.errors
+        loading: false,
       });
     }
   }
 
-onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
-
-onSubmit = e => {
-    e.preventDefault();
-
-const userData = {
-      email: this.state.email,
-      password: this.state.password
-    };
-    this.props.loginUser(userData);
-    console.log(userData);
-  };
 render() {
-    const { errors } = this.state;
+  const { isLoggedIn, message } = this.props;
+
+  if (isLoggedIn) {
+    return <Navigate to="/dashboard" />
+  }
 return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
@@ -64,39 +76,30 @@ return (
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
+            <form noValidate onSubmit={this.handleLogin}
+            ref={(c)=>{
+              this.form = c;
+            }}>
               <div className="input-field col s12">
                 <input
-                  onChange={this.onChange}
+                  onChange={this.onChangeEmail}
                   value={this.state.email}
-                  error={errors.email}
                   id="email"
                   type="email"
-                  className={classnames("", {
-                    invalid: errors.email || errors.emailnotfound
-                  })}
                 />
                 <label htmlFor="email">Email</label>
-                <span className="red-text">
-                  {errors.email}
-                  {errors.emailnotfound}
-                </span>
+               
               </div>
               <div className="input-field col s12">
                 <input
-                  onChange={this.onChange}
+                  onChange={this.onChangePassword}
                   value={this.state.password}
-                  error={errors.password}
                   id="password"
                   type="password"
-                  className={classnames("", {
-                    invalid: errors.password || errors.passwordincorrect
-                  })}
                 />
                 <label htmlFor="password">Password</label>
                 <span className="red-text">
-                  {errors.password}
-                  {errors.passwordincorrect}
+                  
                 </span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -126,12 +129,13 @@ Login.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 };
-const mapStateToProps = state => ({
-  auth: state.auth,
-  errors: state.errors
-});
-export default connect(
-  mapStateToProps,
-  { loginUser }
-)(Login);
+function mapStateToProps(state){
+ 
+  const { isLoggedIn } = state.auth;
+  
+  return{
+    isLoggedIn
+  }
+}
+export default connect( mapStateToProps )(Login);
 
