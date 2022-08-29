@@ -1,11 +1,12 @@
 import React from 'react'
 import iconBlue from '../images/icon blue.png'
 
-
-
 function BotM(){
     return(
-        <section>
+        <div class="container">
+        <div class="row justify-content-center">
+    
+        <div class="col-12">
             <h2>Bud of the Month</h2>
             <h3>Mysterio675</h3>
             <img alt="placeholder" src={iconBlue} height="300px" width="300px" />
@@ -15,7 +16,9 @@ function BotM(){
              So, whether you’re looking for: gameplay videos, retrospectives, opinion pieces or short stories – I’ve got you covered!”
              You can follow Mysterio675 at <a href='/'>YouTube</a>
             </p>
-        </section>
+        </div>
+        </div>
+        </div>
     )
 }
 
