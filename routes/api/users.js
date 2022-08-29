@@ -13,7 +13,6 @@ const User = require("../../models/User");
 
 router.post("/register", (req, res) => {
 
-    
   const { errors, isValid } = validateRegisterInput(req.body);
 
 

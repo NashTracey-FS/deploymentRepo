@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path = require("path");
 
 const users = require("./routes/api/users");
 
@@ -35,6 +36,11 @@ mongoose
 
 const port = process.env.PORT || 5600; 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+
+app.get("/", (req, res, next) => {
+  res.json({ message: "Server up!" });
+  next();
+});
 
 
 
