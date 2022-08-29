@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import pic from '../images/aboutpic.png'
+
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div style={{ height: "90vh" }} className="container valign-wrapper">
         <div className="row">
           <div className="col s12 center-align">
             <h4>
@@ -12,7 +12,7 @@ class Landing extends Component {
               <span style={{ fontFamily: "monospace" }}>DeadRhose_Games</span>! 
             </h4>
             <p className="flow-text blue-text text-darken-1">
-            Here you can learn about youTuber/Twitch streamer <b>DeadRhose_</b>
+            Here you can learn about youTuber/Twitch streamer <b>DeadRhose</b>
             </p>
             <br />
            

@@ -1,6 +1,5 @@
 import {TikTokEmbed} from 'react-social-media-embed'
 import React from 'react'
-import iconBlue from '../images/icon blue.png'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col'
@@ -15,7 +14,7 @@ function Latest(){
                 <b>YouTube</b>
             <Col md="auto">
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/fQ-AcPGWI4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="650" height="415" src="https://www.youtube.com/embed/fQ-AcPGWI4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; FullScreen" allowfullscreen></iframe>
             </Col>
         </Row>
         <Row className="justify-content-md-center">  

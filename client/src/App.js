@@ -14,6 +14,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import About from './components/pages/About';
 import BotM from './components/pages/BotM';
 import Latest from './components/pages/Latest'
+import Footer from './components/layout/Foot';
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken;
@@ -48,9 +49,8 @@ class App extends Component {
           <Route exact path="/about" element={ <About />} />
           <Route exact path="/botm" element={ <BotM />} />
           <Route exact path="/latest" element={ <Latest />} />
-
-
       </Routes>
+      <Footer />
       </div>
      
     );

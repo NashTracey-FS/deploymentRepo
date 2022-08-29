@@ -2,39 +2,41 @@
     "name": "final3",
     "version": "1.0.0",
     "engines": {
-      "node": "16.13.1"
+        "node": "16.13.1"
     },
     "description": "",
     "main": "server.js",
     "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "server": "nodemon server.js",
-      "client": "npm start --prefix client",
-      "dev": "concurrently \"npm run server\" \"npm run client\""
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "server": "nodemon server.js",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm run server\" \"npm run client\""
     },
     "author": "Tracey Nash",
     "license": "ISC",
     "dependencies": {
-      "@fortawesome/fontawesome-svg-core": "^6.1.2",
-      "@fortawesome/free-brands-svg-icons": "^6.1.2",
-      "@fortawesome/react-fontawesome": "^0.2.0",
-      "bcryptjs": "^2.4.3",
-      "body-parser": "^1.20.0",
-      "concurrently": "^7.3.0",
-      "create-react-app": "^5.0.1",
-      "express": "^4.18.1",
-      "firebase": "^9.9.3",
-      "firebase-tools": "^11.8.0",
-      "is-empty": "^1.2.0",
-      "jsonwebtoken": "^8.5.1",
-      "mongodb": "^4.9.0",
-      "mongoose": "^6.5.3",
-      "passport": "^0.6.0",
-      "passport-jwt": "^4.0.0",
-      "redux-devtools-extension": "^2.13.9",
-      "validator": "^13.7.0"
+        "@fortawesome/fontawesome-svg-core": "^6.1.2",
+        "@fortawesome/free-brands-svg-icons": "^6.1.2",
+        "@fortawesome/react-fontawesome": "^0.2.0",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.0",
+        "concurrently": "^7.3.0",
+        "create-react-app": "^5.0.1",
+        "express": "^4.18.1",
+        "firebase": "^9.9.3",
+        "firebase-tools": "^11.8.0",
+        "is-empty": "^1.2.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongodb": "^4.9.0",
+        "mongoose": "^6.5.3",
+        "passport": "^0.6.0",
+        "passport-jwt": "^4.0.0",
+        "react-social-media-embed": "^2.2.2",
+        "redux-devtools-extension": "^2.13.9",
+        "styled-components": "^5.3.5",
+        "validator": "^13.7.0"
     },
     "devDependencies": {
-      "nodemon": "^2.0.19"
+        "nodemon": "^2.0.19"
     }
-  }
+}
