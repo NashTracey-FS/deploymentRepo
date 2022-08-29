@@ -3,7 +3,7 @@ import iconBlue from '../images/icon blue.png'
 
 function BotM(){
     return(
-        <div class="container">
+        <div style={{ height: "90vh" }} class="container">
         <div class="row justify-content-center">
     
         <div class="col-12">

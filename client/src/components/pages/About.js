@@ -3,7 +3,7 @@ import pic from '../images/aboutpic.png'
 
 function About(){
     return(
-        <div class="container">
+        <div style={{ height: "90vh" }} class="container">
         <div class="row justify-content-center">
         <div class="col-12">
             <h2>Meet DeadRhose</h2>
