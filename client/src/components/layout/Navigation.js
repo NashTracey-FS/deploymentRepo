@@ -9,13 +9,14 @@ import {
   NavBtn,
   NavBtnLink,
 } from './NavbarElements';
-
+import Login from "../layout/Login"
 import logo from '../images/logo.png'
 
 
 
 class Navigation extends Component {
   render() {
+
     return (
       <Nav>
       <Bars />
@@ -40,12 +41,12 @@ class Navigation extends Component {
         <NavLink to='/register' >
           Sign Up
         </NavLink>
-        <NavLink to='/login' >
-          Log In
+        <NavLink to='#'>
+          <Login />
         </NavLink>
-        
-      </NavMenu>
+      </NavMenu>       
     </Nav>
+   
     );
   }
 }

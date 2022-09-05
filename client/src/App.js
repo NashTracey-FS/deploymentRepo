@@ -8,11 +8,11 @@ import store from "./store/store";
 import Landing from './components/layout/Landing'
 import Navigation from './components/layout/Navigation'
 import Register from './components/auth/Register'
-import Login from './components/auth/Login'
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import About from './components/pages/About';
 import BotM from './components/pages/BotM';
+import Login from './components/layout/Login'
 import Latest from './components/pages/Latest'
 import Footer from './components/layout/Foot';
 
@@ -39,10 +39,10 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation />   
+        
       <Routes>      
           <Route exact path="/" element={<Landing />} />
           <Route exact path="/register" element={<Register />} />
-          <Route exact path="/login" element={ <Login />} />
           <Route element={<PrivateRoute/>}>
               <Route path='/dashboard' element={<Dashboard/>} />
           </Route>

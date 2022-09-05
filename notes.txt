@@ -19,3 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+
+
+
+oauth secret: 8e06f805022a53e9f30aa388fe5e9690c22371d1
